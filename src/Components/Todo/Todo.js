@@ -3,7 +3,7 @@ import React from 'react';
 
 function Todo() {
 
-    const [items, setItems] = React.useState( [] );
+    const [items, setItems] = React.useState( ['ye','lol'] );
     const [input, setInput] = React.useState( '' );
 
 
@@ -26,6 +26,19 @@ function Todo() {
 
         //Refresh items
     }
+
+     function duplicateItem(e){
+
+        var array = items;
+
+        for (var i = 0; i < array.length; i++){
+            if(e !== array[i]){
+                items.push(e);
+                setItems( array );
+            }
+        }
+    } 
+
 
     return (
         <div>
@@ -50,9 +63,16 @@ function Todo() {
                 placeholder="Type your todo here" 
                 onChange= { handleChange }
             />
-            
-            <button onClick={ event => setItems( items.concat(input) ) }> Confirm </button>
+                    <button onClick={ event => duplicateItem(input)}> Confirm </button>
 
+                    {/*
+                    <button onClick={ event => setItems( items.duplicateItem(input) ) }> Confirm </button>
+                    */}
+                
+                    <button disabled={!setItems} > Disabled </button>
+                
+            
+           
         </div>
     )
 };

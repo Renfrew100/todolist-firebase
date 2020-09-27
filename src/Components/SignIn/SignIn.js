@@ -11,9 +11,12 @@ function SignIn() {
                 <input type="text" placeholder="password" />
 
             </form>
+
+            <form>
+                <button type = "submit" > Confirm </button>
+             </form>
             
         </div>
     )
 };
-
 export default SignIn;

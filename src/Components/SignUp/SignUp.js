@@ -12,7 +12,10 @@ function SignUp() {
                 
             </form>
             
-
+            <form>
+                <button type = "submit" > Confirm </button>
+             </form>
+             
         </div>
     )
 };

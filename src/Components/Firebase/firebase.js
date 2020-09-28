@@ -1,5 +1,5 @@
 import app from 'firebase/app';
-import  'firebase/auth';
+import 'firebase/auth';
 import 'firebase/firestore';
 
 var firebaseConfig = {
@@ -16,8 +16,17 @@ class Firebase {
 
     construtor(){
         app.initializeApp(firebaseConfig);
-        this.app = app.auth();
-    }   
+
+        this.auth = app.auth();
+        //this.db = app.firestore();
+    }
+
+    doCreateUserWithEmailAndPassword = (email, password) => {
+        this.auth.createUserWithEmailAndPassword(email, password);
+    }
+        
+    
+
 }
 
 export default Firebase;
